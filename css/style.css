@@ -1,5 +1,11 @@
 html {
     --sub-color: #9D2929;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
 }
 
 img {
