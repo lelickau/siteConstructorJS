@@ -1,0 +1,98 @@
+{
+	title: 'Локи - официальный сайт сериала',
+	background: 'loki/background.jpg',
+	favicon: 'loki/favicon.png',
+	fontColor: '#FFFFFF',
+	backgroundColor: '#141218',
+	subColor: '#81b214',
+	header: {
+		title: 'Локи',
+		logo: 'loki/logo.png',
+		social: [{
+				title: 'twitter',
+				link: 'https://twitter.com',
+				img: 'loki/social/twitter.svg',
+			},
+			{
+				title: 'instagram',
+				link: 'https://instagram.com',
+				img: 'loki/social/instagram.svg',
+			},
+			{
+				title: 'facebook',
+				link: 'https://facebook.com',
+				img: 'loki/social/facebook.svg',
+			}
+		],
+		menu: [{
+			title: 'Описание',
+			link: '#',
+		},
+		{
+			title: 'Трейлер',
+			link: '#',
+		},
+		{
+			title: 'Отзывы',
+			link: '#',
+		}
+	]
+	},
+	main: {
+		title: 'Локи',
+		genre: '2021, фантастика, фэнтези, боевик, приключения',
+		rating: '8',
+		descriptions: 'Локи попадает в таинственную организацию «Управление временными изменениями» после того, как он украл Тессеракт, и путешествует во времени, меняя историю.',
+		trailer: 'https://youtu.be/YrjHcYqe31g',
+		slider: [
+          {
+            img: 'loki/series/series-1.jpg',
+            title: 'Славная миссия',
+            subtitle: 'Серия №1',
+          }, 
+          {
+            img: 'loki/series/series-2.jpg',
+            title: 'Вариант',
+            subtitle: 'Серия №2',
+          }, 
+          {
+            img: 'loki/series/series-3.jpg',
+            title: 'Ламентис',
+            subtitle: 'Серия №3',
+          }, 
+          {
+            img: 'loki/series/series-4.jpg',
+            title: 'Смежное событие',
+            subtitle: 'Серия №4',
+          },
+          {
+            img: 'loki/series/series-5.jpg',
+            title: 'Путешествие в неизвестность',
+            subtitle: 'Серия №5',
+          },
+          {
+            img: 'loki/series/series-6.jpg',
+            title: 'На все времена. Всегда',
+            subtitle: 'Серия №6',
+          }
+        ]
+	},
+	footer : {
+		copyright: '© 2020 The Loki. All right reserved.',
+		menu: [
+			{
+				title: 'Privacy Policy',
+				href: '#',
+			},
+			{
+				title: 'Terms of Service',
+				href: '#',
+			},
+			{
+				title: 'Legal',
+				href: '#',
+			},
+		],
+	}
+	
+}

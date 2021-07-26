@@ -206,6 +206,44 @@ const createMain = ({main: {title, genre, rating, descriptions, trailer, slider}
 	return main;
 }
 
+
+//footer
+const createFooter = ({copyright, menu}) => {
+	const footer = getElem('footer', ['footer']);
+	const container = getElem('div', ['container']);
+	const content = getElem('div', ['footer-content']);
+	container.append(content);
+
+	if (copyright) {
+		const leftContent = getElem('div', ['left']);
+		const copyrightElem = getElem('span', ['copyright'], {
+			textContent: copyright
+		});
+		content.append(leftContent);
+		leftContent.append(copyrightElem);
+	}
+
+	if (menu) {
+		const rightContent = getElem('div', ['right']);
+		const nav = getElem('nav', ['footer-menu']);
+
+		const allFooterLink = menu.map(item => {
+			const link = getElem('a', ['footer-link'], {
+				href: item.href,
+				textContent: item.title
+			})
+			return link;
+		});
+
+		content.append(rightContent);
+		rightContent.append(nav);
+		nav.append(...allFooterLink);
+	}
+
+	footer.append(container);
+	return footer;
+}
+
 /**
  * Финальный конструктор (собирает страницу сайта)
  * @param {*String} selector - принимает селектор в котором будет находится вся внутренность сайта
@@ -248,32 +286,37 @@ const movieConstructor = (selector, options) => {
 	if (options.main) {
 		app.append(createMain(options));
 	}
+
+	//footer
+	if (options.footer) {
+		app.append(createFooter(options.footer))
+	}
 }
 
 movieConstructor('.app', {
-	title: 'Ведьмак - официальный сайт сериала',
-	background: 'witcher/background.jpg',
-	favicon: 'witcher/logo.png',
+	title: 'Локи - официальный сайт сериала',
+	background: 'loki/background.jpg',
+	favicon: 'loki/favicon.png',
 	fontColor: '#FFFFFF',
 	backgroundColor: '#141218',
-	subColor: '#9D2929',
+	subColor: '#81b214',
 	header: {
-		title: 'Ведьмак',
-		logo: 'witcher/logo.png',
+		title: 'Локи',
+		logo: 'loki/logo.png',
 		social: [{
 				title: 'twitter',
 				link: 'https://twitter.com',
-				img: 'witcher/social/twitter.svg',
+				img: 'loki/social/twitter.svg',
 			},
 			{
 				title: 'instagram',
 				link: 'https://instagram.com',
-				img: 'witcher/social/instagram.svg',
+				img: 'loki/social/instagram.svg',
 			},
 			{
 				title: 'facebook',
 				link: 'https://facebook.com',
-				img: 'witcher/social/facebook.svg',
+				img: 'loki/social/facebook.svg',
 			}
 		],
 		menu: [{
@@ -291,34 +334,62 @@ movieConstructor('.app', {
 	]
 	},
 	main: {
-		title: 'Ведьмак',
-		genre: '2019,фэнтези',
+		title: 'Локи',
+		genre: '2021, фантастика, фэнтези, боевик, приключения',
 		rating: '8',
-		descriptions: 'Ведьмак Геральт, мутант и убийца чудовищ, на своей верной лошади по кличке Плотва путешествует по Континенту. За тугой мешочек чеканных монет этот мужчина избавит вас от всякой настырной нечисти — хоть от чудищ болотных, оборотней и даже заколдованных принцесс.',
-		trailer: 'https://www.youtube.com/watch?v=P0oJqfLzZzQ',
+		descriptions: 'Локи попадает в таинственную организацию «Управление временными изменениями» после того, как он украл Тессеракт, и путешествует во времени, меняя историю.',
+		trailer: 'https://youtu.be/YrjHcYqe31g',
 		slider: [
+          {
+            img: 'loki/series/series-1.jpg',
+            title: 'Славная миссия',
+            subtitle: 'Серия №1',
+          }, 
+          {
+            img: 'loki/series/series-2.jpg',
+            title: 'Вариант',
+            subtitle: 'Серия №2',
+          }, 
+          {
+            img: 'loki/series/series-3.jpg',
+            title: 'Ламентис',
+            subtitle: 'Серия №3',
+          }, 
+          {
+            img: 'loki/series/series-4.jpg',
+            title: 'Смежное событие',
+            subtitle: 'Серия №4',
+          },
+          {
+            img: 'loki/series/series-5.jpg',
+            title: 'Путешествие в неизвестность',
+            subtitle: 'Серия №5',
+          },
+          {
+            img: 'loki/series/series-6.jpg',
+            title: 'На все времена. Всегда',
+            subtitle: 'Серия №6',
+          }
+        ]
+	},
+	footer : {
+		copyright: '© 2020 The Loki. All right reserved.',
+		menu: [
 			{
-				img: 'witcher/series/series-1.jpg',
-				title: 'Начало конца',
-				subtitle: 'Серия №1',
+				title: 'Privacy Policy',
+				href: '#',
 			},
 			{
-				img: 'witcher/series/series-2.jpg',
-				title: 'Четыре марки',
-				subtitle: 'Серия №2',
+				title: 'Terms of Service',
+				href: '#',
 			},
 			{
-				img: 'witcher/series/series-3.jpg',
-				title: 'Предательская луна',
-				subtitle: 'Серия №3',
+				title: 'Legal',
+				href: '#',
 			},
-			{
-				img: 'witcher/series/series-4.jpg',
-				title: 'Банкеты, ублюдки и похороны',
-				subtitle: 'Серия №4',
-			}
-		]
+		],
 	}
 	
-});
+}
+);
 
